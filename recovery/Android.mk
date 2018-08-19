@@ -7,12 +7,13 @@ LOCAL_CFLAGS += -DUSES_BOOTDEVICE_PATH
 endif
 
 LOCAL_C_INCLUDES := \
-    $(call project-path-for,recovery) \
-    $(call project-path-for,recovery)/updater/include \
+		bootable/edify/include \
+		bootable/otautil/include \
+		bootable/updater/include
+
 
 LOCAL_SRC_FILES := recovery_updater.cpp
 LOCAL_MODULE := librecovery_updater_oneplus
 LOCAL_MODULE_TAGS := eng
 
 include $(BUILD_STATIC_LIBRARY)
-
