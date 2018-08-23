@@ -70,6 +70,7 @@ TARGET_USES_64_BIT_BINDER := true
 # Kernel
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 sched_enable_hmp=1 sched_enable_power_aware=1 service_locator.enable=1 swiotlb=2048
 BOARD_KERNEL_CMDLINE += androidboot.configfs=true
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
@@ -205,14 +206,16 @@ VSYNC_EVENT_PHASE_OFFSET_NS := 2000000
 SF_VSYNC_EVENT_PHASE_OFFSET_NS := 6000000
 
 # Enable dexpreopt to speed boot time
-ifeq ($(HOST_OS),linux)
-  ifneq ($(TARGET_BUILD_VARIANT),eng)
-    ifeq ($(WITH_DEXPREOPT),)
-      WITH_DEXPREOPT := true
-      WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
-    endif
-  endif
-endif
+#ifeq ($(HOST_OS),linux)
+#  ifneq ($(TARGET_BUILD_VARIANT),eng)
+#    ifeq ($(WITH_DEXPREOPT),)
+#      WITH_DEXPREOPT := true
+#      WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
+#    endif
+#  endif
+#endif
+
+ WITH_DEXPREOPT := false
 
 # Filesystem
 TARGET_FS_CONFIG_GEN += $(PLATFORM_PATH)/config.fs
@@ -282,9 +285,9 @@ BOARD_ROOT_EXTRA_FOLDERS := bt_firmware dsp firmware persist
 # SELinux
 #include device/qcom/sepolicy/sepolicy.mk
 
-BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy/vendor
-BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(PLATFORM_PATH)/sepolicy/public
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(PLATFORM_PATH)/sepolicy/private
+#BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy/vendor
+#BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(PLATFORM_PATH)/sepolicy/public
+#BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(PLATFORM_PATH)/sepolicy/private
 
 # Timeservice
 BOARD_USES_QC_TIME_SERVICES := true
