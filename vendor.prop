@@ -198,3 +198,6 @@ sys.usb.rmnet.func.name=gsi
 
 # Wi-Fi
 wifi.interface=wlan0
+
+# RescueParty
+persist.sys.disable_rescue=true

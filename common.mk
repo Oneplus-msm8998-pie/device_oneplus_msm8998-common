@@ -24,8 +24,8 @@
 
 $(call inherit-product, vendor/oneplus/msm8998-common/msm8998-common-vendor.mk)
 
-SRC_MEDIA_HAL_DIR := hardware/qcom/media/msm8998
-SRC_DISPLAY_HAL_DIR := hardware/qcom/display/msm8998
+SRC_MEDIA_HAL_DIR := hardware/qcom/media-caf/msm8998
+SRC_DISPLAY_HAL_DIR := hardware/qcom/display-caf/msm8998
 SRC_CAMERA_HAL_DIR := hardware/qcom/camera/msm8998
 
 # Overlays
