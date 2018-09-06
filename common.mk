@@ -193,14 +193,18 @@ PRODUCT_PACKAGES += \
     vendor.display.config@1.0_vendor
 
 # Doze
-#PRODUCT_PACKAGES += \
-#    Doze
+PRODUCT_PACKAGES += \
+    Doze
 
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
     android.hardware.drm@1.0-service \
     android.hardware.drm@1.0-service.widevine
+
+#Eleven
+PRODUCT_PACKAGES += \
+    Eleven
 
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
@@ -403,9 +407,9 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-service
 
 # Tetheroffload
-#PRODUCT_PACKAGES += \
-#    ipacm \
-#    IPACM_cfg.xml
+PRODUCT_PACKAGES += \
+    ipacm \
+    IPACM_cfg.xml
 
 # TextClassifier smart selection model files
 PRODUCT_PACKAGES += \
